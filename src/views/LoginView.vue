@@ -19,11 +19,8 @@ const user = reactive({
 
 async function login() {
   try {
-    const { data } = await http.post('/login', user);
-    console.log(data);
-
-    // Store the JWT in localStorage
-    localStorage.setItem('jwt', data.jwt);
+    const {data} = await http.post('/login',user);
+    console.log(data)
   } catch (error) {
     console.log(error?.response?.data);
   }
